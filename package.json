@@ -22,6 +22,7 @@
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.9",
+		"@vercel/edge-config": "^1.4.0",
 		"svelte-hamburgers": "^5.0.0",
 		"swiper": "^11.2.4",
 		"tailwindcss": "^4.0.9"

@@ -1,14 +1,20 @@
 <script>
     import Card from "../components/card.svelte";
+    import data from "../data.json";
+    const teacher = $state(data.teacher);
+    const student = $state(data.student);
 </script>
 
-<div>
-    <section id="Teacher" class="min-h-screen">
+<div class="my-10 flex flex-col gap-10">
+    <section id="Teacher" class="">
         <h2
             class=" header relative text-3xl font-play mb-10 font-bold text-black"
         >
             Teacher
         </h2>
+        <div class="">
+            <Card data={teacher} />
+        </div>
     </section>
     <section id="Student" class="min-h-screen">
         <h2
@@ -17,7 +23,7 @@
             Student
         </h2>
         <div class="">
-            <Card />
+            <Card data={student} />
         </div>
     </section>
 </div>

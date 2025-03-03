@@ -1,6 +1,18 @@
 <script>
     import { Hamburger } from "svelte-hamburgers";
     let open = false;
+    import { goto } from "$app/navigation";
+    // @ts-ignore
+    function navigateToSection(id) {
+        goto("/").then(() => {
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 100);
+        });
+    }
 </script>
 
 <nav class=" h-18 w-full p-3 sticky top-0 z-50">
@@ -11,10 +23,22 @@
             <span class="text-2xl font-play font-bold">M.6/2</span>
         </div>
         <ul class="gap-5 hidden md:flex">
-            <li><a href="#Teacher">ครูประจำชั้น</a></li>
-            <li><a href="#Student">นักเรียน</a></li>
+            <li>
+                <button
+                    class="cursor-pointer"
+                    on:click={() => navigateToSection("Teacher")}
+                    >ครูประจำชั้น</button
+                >
+            </li>
+            <li>
+                <button
+                    class="cursor-pointer"
+                    on:click={() => navigateToSection("Student")}
+                    >นักเรียน</button
+                >
+            </li>
             <li><a href="/">รูปรวมความทรงจำ</a></li>
-            <li><a href="/">Grabuation</a></li>
+            <li><a href="/">Graduation</a></li>
         </ul>
         <div class={`md:hidden`}>
             <Hamburger bind:open />
@@ -53,7 +77,7 @@
                     <a
                         href="/"
                         class="w-full text-center"
-                        on:click={() => (open = !open)}>Grabuation</a
+                        on:click={() => (open = !open)}>Graduation</a
                     >
                 </li>
             </ul>

@@ -1,19 +1,40 @@
 <script>
-    import Nano from "../image/student/Nano.png";
+    export const data = $props();
+    if (data.data.length == 2) {
+        console.log("Hee");
+    }
 </script>
 
-<div class="flex justify-center md:justify-start flex-wrap">
-    <a href="#Teacher" class="card relative max-w-72">
-        <img class="" src={Nano} alt="" />
-        <div
-            class=" absolute bg-gradient-to-tr from-[#ddd6f3] to-[#faaca8] rounded-2xl w-full h-full bottom-0 bgcard"
-        ></div>
-        <div
-            class=" absolute bottom-10 h-10 items-center left-1/2 translate-x-[-50%] name flex w-full justify-center bg-[#5c95ff6e] backdrop-blur-2xl rounded-md"
-        >
-            <p class="text-2xl z-60">นาโน</p>
-        </div>
-    </a>
+<div class="flex justify-center flex-wrap gap-x-4 gap-y-6">
+    {#if data.data.length == 2}
+        {#each data.data as datas}
+            <a href={"/"} class="card cursor-default relative max-w-72">
+                <img class="" src={datas.image} alt="" />
+                <div
+                    class=" absolute bg-gradient-to-tr from-[#ddd6f3] to-[#faaca8] rounded-2xl w-full h-full bottom-0 bgcard"
+                ></div>
+                <div
+                    class=" absolute bottom-10 h-10 items-center left-1/2 translate-x-[-50%] name flex w-full justify-center bg-[#5c95ff6e] backdrop-blur-2xl rounded-md"
+                >
+                    <p class="text-[22px] z-60">{datas.nickname}</p>
+                </div>
+            </a>
+        {/each}
+    {:else}
+        {#each data.data as datas}
+            <a href={`/student/${datas.id}`} class="card relative max-w-72">
+                <img class="" src={datas.image} alt="" />
+                <div
+                    class=" absolute bg-gradient-to-tr from-[#ddd6f3] to-[#faaca8] rounded-2xl w-full h-full bottom-0 bgcard"
+                ></div>
+                <div
+                    class=" absolute bottom-10 h-10 items-center left-1/2 translate-x-[-50%] name flex w-full justify-center bg-[#5c95ff6e] backdrop-blur-2xl rounded-md"
+                >
+                    <p class="text-[22px] z-60">{datas.nickname}</p>
+                </div>
+            </a>
+        {/each}
+    {/if}
 </div>
 
 <style>
