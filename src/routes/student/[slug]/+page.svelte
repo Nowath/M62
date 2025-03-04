@@ -37,8 +37,12 @@
                 {#if data.person.university != "-"}
                     <div class=" flex flex-col items-center z-20 mt-5">
                         <h1 class="text text-xl">{data.person.university}</h1>
-                        <h1 class="text text-xl">{data.person.group}</h1>
-                        <h2 class="text text-xl">{data.person.branch}</h2>
+                        {#if data.person.group != "-"}
+                            <h1 class="text text-xl">
+                                {data.person.group}
+                            </h1>
+                            <h2 class="text text-xl">{data.person.branch}</h2>
+                        {/if}
                     </div>
                 {/if}
             </div>
