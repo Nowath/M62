@@ -15,7 +15,7 @@
     }
 </script>
 
-<nav class=" h-18 w-full p-3 sticky top-0 z-50">
+<nav class=" h-18 w-full p-3 sticky top-0 z-999999999999">
     <div
         class="w-full h-full bg-[#ffffffa9] border-pink-300 border-2 text-black relative backdrop-blur-lg rounded-2xl px-10 md:px-16 flex items-center justify-between"
     >
@@ -37,8 +37,13 @@
                     >นักเรียน</button
                 >
             </li>
-            <li><a href="/">รูปรวมความทรงจำ</a></li>
-            <li><a href="/">Graduation</a></li>
+            <li>
+                <button
+                    class="cursor-pointer"
+                    on:click={() => navigateToSection("Gallery")}
+                    >Gallery</button
+                >
+            </li>
         </ul>
         <div class={`md:hidden`}>
             <Hamburger bind:open />
@@ -50,36 +55,38 @@
                 class="w-full gap-5 drop text-white border-pink-300 border-2 rounded-2xl"
             >
                 <li class="px-2 py-4 flex justify-center">
-                    <a
+                    <button
                         class="w-full text-center"
-                        href="#Teacher"
-                        on:click={() => (open = !open)}>ครูประจำชั้น</a
-                    >
+                        on:click={() => {
+                            open = !open;
+                            navigateToSection("Teacher");
+                        }}
+                        >ครูประจำชั้น
+                    </button>
                 </li>
                 <hr />
                 <li class="px-2 py-4 flex justify-center">
-                    <a
-                        href="#Student"
+                    <button
                         class="w-full text-center"
-                        on:click={() => (open = !open)}>นักเรียน</a
-                    >
+                        on:click={() => {
+                            open = !open;
+                            navigateToSection("Student");
+                        }}
+                        >นักเรียน
+                    </button>
                 </li>
                 <hr />
                 <li class="px-2 py-4 flex justify-center">
-                    <a
-                        href="/"
+                    <button
                         class="w-full text-center"
-                        on:click={() => (open = !open)}>รูปรวมความทรงจำ</a
-                    >
+                        on:click={() => {
+                            open = !open;
+                            navigateToSection("Gallery");
+                        }}
+                        >Gallery
+                    </button>
                 </li>
                 <hr />
-                <li class="px-2 py-4 flex justify-center">
-                    <a
-                        href="/"
-                        class="w-full text-center"
-                        on:click={() => (open = !open)}>Graduation</a
-                    >
-                </li>
             </ul>
         </div>
     </div>

@@ -10,7 +10,7 @@
 >
     <Firstpage />
     <Navbar />
-    <div class=" px-6 md:px-20 mt-5 min-h-screen">
+    <div class=" px-6 md:px-20 mt-5">
         {@render children()}
     </div>
 </div>

@@ -1,8 +1,5 @@
 <script>
     export const data = $props();
-    if (data.data.length == 2) {
-        console.log("Hee");
-    }
 </script>
 
 <div class="flex justify-center flex-wrap gap-x-4 gap-y-6">

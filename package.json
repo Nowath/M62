@@ -24,6 +24,8 @@
 		"@tailwindcss/vite": "^4.0.9",
 		"@vercel/edge-config": "^1.4.0",
 		"svelte-hamburgers": "^5.0.0",
+		"svelte-icons": "^2.1.0",
+		"svelte-motion": "^0.12.2",
 		"swiper": "^11.2.4",
 		"tailwindcss": "^4.0.9"
 	}

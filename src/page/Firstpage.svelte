@@ -38,7 +38,7 @@
             loop="true"
             css-mode="true"
             class="w-full h-full"
-            autoplay-delay="5000"
+            autoplay-delay="2500"
             autoplay-disable-on-interaction="false"
         >
             <swiper-slide class="max-h-[92vh] overflow-hidden">
