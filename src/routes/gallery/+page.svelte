@@ -4,7 +4,7 @@
     const datas = data.Gallery;
 </script>
 
-<Back />
+<Back backto="/#Gallery" />
 <div class="flex justify-center mt-5">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 relative gap-3">
         <div class=" flex flex-col gap-3">

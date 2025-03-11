@@ -1,9 +1,10 @@
 <script>
     import FaArrowLeft from "svelte-icons/fa/FaArrowLeft.svelte";
+    let { backto } = $props();
 </script>
 
 <div class="flex">
-    <a class="cursor-pointer" href="/">
+    <a class="cursor-pointer" href={backto}>
         <div class=" rainbow z-999999 relative">
             <div class="w-10 h-10 bg-black rounded-full p-2">
                 <FaArrowLeft />

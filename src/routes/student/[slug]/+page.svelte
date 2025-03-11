@@ -6,13 +6,14 @@
     import { Motion } from "svelte-motion";
 </script>
 
-<Back />
+<Back backto="/#Student" />
 <div class="flex items-center flex-col w-full gap-5 my-5 relative">
     <div
         class="bg-[#000000c5] px-5 md:px-20 rounded-2xl py-10 flex flex-col gap-8 relative"
     >
         <Motion whileHover={{ scale: 1.1 }} let:motion>
             <img
+                style={`view-transition-name: img-${data.person.id}`}
                 src={data.person.image}
                 alt={data.person.nickname}
                 class="w-96 select-none z-10"

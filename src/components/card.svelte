@@ -2,7 +2,7 @@
     export const data = $props();
 </script>
 
-<div class="flex justify-center flex-wrap gap-x-4 gap-y-6">
+<div class="flex justify-center flex-wrap gap-x-4 gap-y-6 select-none">
     {#if data.data.length == 2}
         {#each data.data as datas}
             <a href={"/"} class="card cursor-default relative max-w-72">
@@ -20,7 +20,12 @@
     {:else}
         {#each data.data as datas}
             <a href={`/student/${datas.id}`} class="card relative max-w-72">
-                <img class="" src={datas.image} alt="" />
+                <img
+                    style={`view-transition-name: img-${datas.id}`}
+                    class=""
+                    src={datas.image}
+                    alt=""
+                />
                 <div
                     class=" absolute bg-gradient-to-tr from-[#ddd6f3] to-[#faaca8] rounded-2xl w-full h-full bottom-0 bgcard"
                 ></div>

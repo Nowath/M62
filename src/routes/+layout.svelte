@@ -3,11 +3,13 @@
     import "../app.css";
     import Firstpage from "../page/Firstpage.svelte";
     import Navbar from "../components/Navbar.svelte";
+    import ViewNavigation from "../components/navigation.svelte";
 </script>
 
 <div
     class=" font-kanit background font-light text-white relative w-screen h-screen overflow-auto"
 >
+    <ViewNavigation />
     <Firstpage />
     <Navbar />
     <div class=" px-6 md:px-20 mt-5">
