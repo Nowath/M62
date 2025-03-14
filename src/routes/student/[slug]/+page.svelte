@@ -1,12 +1,23 @@
 <script>
     export let data;
-    import FaInstagram from "svelte-icons/fa/FaInstagram.svelte";
-    import FaFacebook from "svelte-icons/fa/FaFacebook.svelte";
     import Back from "../../../components/backbutton.svelte";
     import { Motion } from "svelte-motion";
+    import IoLogoInstagram from "svelte-icons/io/IoLogoInstagram.svelte";
+    import IoLogoFacebook from "svelte-icons/io/IoLogoFacebook.svelte";
+    import { onMount } from "svelte";
+    onMount(() => {
+        let linkFacebook = data.person.facebook
+            .toLowerCase()
+            .split(" ")
+            .join(".");
+        console.log(linkFacebook);
+    });
 </script>
 
-<Back backto="/#Student" />
+<div class=" absolute">
+    <Back backto={`/#Student`} />
+</div>
+
 <div class="flex items-center flex-col w-full gap-5 my-5 relative">
     <div
         class="bg-[#000000c5] px-5 md:px-20 rounded-2xl py-10 flex flex-col gap-8 relative"
@@ -25,15 +36,34 @@
 
                 <div class="flex justify-center items-center gap-2">
                     <div class="w-5">
-                        <FaInstagram />
+                        <IoLogoInstagram />
                     </div>
-                    <p class="text-xl">{data.person.IG}</p>
+                    <a
+                        href={`https://www.instagram.com/${data.person.IG}/`}
+                        class="text-xl hover:text-pink-300"
+                        target="_blank"
+                        >{data.person.IG}
+                    </a>
                 </div>
                 <div class="flex justify-center items-center gap-2">
                     <div class="w-5">
-                        <FaFacebook />
+                        <IoLogoFacebook />
                     </div>
-                    <p class="text-xl">{data.person.facebook}</p>
+                    {#if data.person.facebook_link}
+                        <a
+                            href={`https://www.facebook.com/${data.person.facebook_link}`}
+                            class="text-xl hover:text-pink-300"
+                            target="_blank"
+                            >{data.person.facebook}
+                        </a>
+                    {:else}
+                        <a
+                            href={`https://www.facebook.com/${data.person.facebook.toLowerCase().split(" ").join(".")}`}
+                            class="text-xl hover:text-pink-300"
+                            target="_blank"
+                            >{data.person.facebook}
+                        </a>
+                    {/if}
                 </div>
                 {#if data.person.university != "-"}
                     <div class=" flex flex-col items-center z-20 mt-5">

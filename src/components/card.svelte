@@ -2,11 +2,11 @@
     export const data = $props();
 </script>
 
-<div class="flex justify-center flex-wrap gap-x-4 gap-y-6 select-none">
+<div class="flex main justify-center flex-wrap gap-x-4 gap-y-6 select-none">
     {#if data.data.length == 2}
         {#each data.data as datas}
             <a href={"/"} class="card cursor-default relative max-w-72">
-                <img class="" src={datas.image} alt="" />
+                <img class="" src={datas.image} alt={datas.nickname} />
                 <div
                     class=" absolute bg-gradient-to-tr from-[#ddd6f3] to-[#faaca8] rounded-2xl w-full h-full bottom-0 bgcard"
                 ></div>
@@ -24,7 +24,8 @@
                     style={`view-transition-name: img-${datas.id}`}
                     class=""
                     src={datas.image}
-                    alt=""
+                    alt={datas.nickname}
+                    id={`Student_${datas.id}`}
                 />
                 <div
                     class=" absolute bg-gradient-to-tr from-[#ddd6f3] to-[#faaca8] rounded-2xl w-full h-full bottom-0 bgcard"
