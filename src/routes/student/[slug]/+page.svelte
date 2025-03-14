@@ -4,14 +4,6 @@
     import { Motion } from "svelte-motion";
     import IoLogoInstagram from "svelte-icons/io/IoLogoInstagram.svelte";
     import IoLogoFacebook from "svelte-icons/io/IoLogoFacebook.svelte";
-    import { onMount } from "svelte";
-    onMount(() => {
-        let linkFacebook = data.person.facebook
-            .toLowerCase()
-            .split(" ")
-            .join(".");
-        console.log(linkFacebook);
-    });
 </script>
 
 <div class=" absolute">
